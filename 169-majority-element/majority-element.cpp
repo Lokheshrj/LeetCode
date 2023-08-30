@@ -9,11 +9,11 @@ public:
             c++;
             else
             c=0;
-                if(c>m)
-                {
-                m=c;
-                n=i;
-                }
+            if(c>m&&c>0)
+            {
+            m=c;
+            n=i;
+            }
         }
         return nums[n];
     }
