@@ -22,6 +22,5 @@ int* twoSum(int* nums, int numsize, int target, int* returnSize)
     int *ptr=(int*)malloc(2*sizeof(int));
     ptr[0]=t1;
     ptr[1]=t2;
-   // printf("%d %d",ptr[0],ptr[1]);
     return ptr;
 }
