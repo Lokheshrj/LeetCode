@@ -11,15 +11,14 @@ public:
     }
     if(l<word2.length())
     {
+        int m=word2.length();
         for(;l<word2.length();l++)
         res+=word2[l];
         return res;
     }
     if(l<word1.length())
-    {
         for(;l<word1.length();l++)
         res+=word1[l];
-    }
     return res;
     }
 };
