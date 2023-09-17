@@ -1,7 +1,7 @@
 class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
-    int l=0,i=0;
+    int l=0;
     string res="";
     while((word1[l]!='\0') && (word2[l]!='\0'))
     {
