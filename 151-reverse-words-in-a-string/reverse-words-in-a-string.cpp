@@ -17,11 +17,11 @@ public:
             else
             d+=s[i];
         }
-        auto i=dum.rbegin();
-        d=*i;
-        ++i;
-        for(;i!=dum.rend();i++)
-            d+=" "+*i;
+        int i=dum.size()-1;
+        d=dum[i];
+        --i;
+        for(;i>=0;--i)
+            d+=" "+dum[i];
         return d;
     }
 };
