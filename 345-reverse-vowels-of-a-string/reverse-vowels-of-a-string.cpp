@@ -8,12 +8,12 @@ public:
     {
 
         vector<char>list;
-        int len=s.length();
+        //int len=;
         int c=0,i;
-        for(i=0;i<len;i++)
+        for(i=0;i<s.length();i++)
             if(isvowel(s[i]))
             list.push_back(s[i]);
-        for(i=len-1;i>=0;--i)
+        for(i=s.length()-1;i>=0;--i)
             if(isvowel(s[i]))
             {
                 s[i]=list[c];
