@@ -9,11 +9,11 @@ public:
 
         vector<char>list;
         int len=s.length();
-        int c=0;
-        for(int i=0;i<len;i++)
+        int c=0,i;
+        for(i=0;i<len;i++)
             if(isvowel(s[i]))
             list.push_back(s[i]);
-        for(int i=len-1;i>=0;--i)
+        for(i=len-1;i>=0;--i)
             if(isvowel(s[i]))
             {
                 s[i]=list[c];
