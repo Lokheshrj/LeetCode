@@ -49,18 +49,8 @@ public:
         nums2=remove_dup(nums2);
 
         vector<vector<int>> res;
-        vector<int>dum;
-
-        
-
         res.push_back(find(nums1,nums2));
-
-
-        for(int i=0;i<nums2.size();i++)
-            if(binary_search(nums1,nums2[i]))
-            dum.push_back(nums2[i]);
-
-        res.push_back(dum);
+        res.push_back(find(nums2,nums1));
         return res;
     }
 };
