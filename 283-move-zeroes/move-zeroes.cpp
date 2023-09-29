@@ -15,9 +15,7 @@ public:
         while(zc--)
         {
             nums[p]=0;
-            ++p;
+            ++p; 
         }
-        for(int x:nums)
-        cout<<x;
     }
 };
