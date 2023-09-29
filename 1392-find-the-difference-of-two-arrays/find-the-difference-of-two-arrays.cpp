@@ -15,51 +15,29 @@ public:
         }
         return true;
     } 
-    /*vector<int>* remove_dup(vector<int>&arr)
+
+    vector<int>remove_dup(vector<int>&a)
     {
-        vector<int>*res;
-        if(arr.size()>1)
-        {
-            for(int i=0;i<arr.size()-1;i++)
+        vector<int>t1;
+            for(int i=0;i<a.size();i++)
             {
-                if(arr[i]!=arr[i+1])
-                res->push_back(arr[i]);
+                if(i!=a.size()-1)
+                {
+                    if(a[i]!=a[i+1])
+                        t1.push_back(a[i]);
+                }
+                else
+                    t1.push_back(a[i]);
             }
-        }
-        return res;
-    }*/
+            return t1;
+    }
+
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) 
     {
         sort(nums1.begin(),nums1.end());
         sort(nums2.begin(),nums2.end());
-        vector<int>t1; 
-
-        for(int i=0;i<nums1.size();i++)
-            {
-                if(i!=nums1.size()-1)
-                {
-                    if(nums1[i]!=nums1[i+1])
-                        t1.push_back(nums1[i]);
-                }
-                else
-                    t1.push_back(nums1[i]);
-            }
-
-        nums1=t1;
-        t1.clear();
-
-        for(int i=0;i<nums2.size();i++)
-            {
-                if(i!=nums2.size()-1)
-                {
-                    if(nums2[i]!=nums2[i+1])
-                        t1.push_back(nums2[i]);
-                }
-                else
-                    t1.push_back(nums2[i]);
-            }
-        nums2=t1;
-        t1.clear();
+        nums1=remove_dup(nums1);
+        nums2=remove_dup(nums2);
 
         vector<vector<int>> res;
         vector<int>dum;
