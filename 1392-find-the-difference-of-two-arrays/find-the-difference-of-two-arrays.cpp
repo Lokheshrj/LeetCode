@@ -32,52 +32,48 @@ public:
     {
         sort(nums1.begin(),nums1.end());
         sort(nums2.begin(),nums2.end());
-        vector<int>t1;
-        vector<int>t2;      
+        vector<int>t1; 
+
         for(int i=0;i<nums1.size();i++)
             {
                 if(i!=nums1.size()-1)
                 {
-                if(nums1[i]!=nums1[i+1])
-                t1.push_back(nums1[i]);
+                    if(nums1[i]!=nums1[i+1])
+                        t1.push_back(nums1[i]);
                 }
                 else
-                {
-                    //if(nums1[i-1]!=nums1[i])
                     t1.push_back(nums1[i]);
-                }
             }
+
+        nums1=t1;
+        t1.clear();
+
         for(int i=0;i<nums2.size();i++)
             {
                 if(i!=nums2.size()-1)
                 {
-                if(nums2[i]!=nums2[i+1])
-                t2.push_back(nums2[i]);
+                    if(nums2[i]!=nums2[i+1])
+                        t1.push_back(nums2[i]);
                 }
                 else
-                {
-                    //if(nums2[i-1]!=nums2[i])
-                    t2.push_back(nums2[i]);
-                }
+                    t1.push_back(nums2[i]);
             }
-        for(int x:t1)
-        cout<<x;
-        cout<<"\n REsult :\n";
-        for(int x:t2)
-        cout<<x;
+        nums2=t1;
+        t1.clear();
+
         vector<vector<int>> res;
         vector<int>dum;
 
-        for(int i=0;i<t1.size();i++)
-            if(binary_search(t2,t1[i]))
-            dum.push_back(t1[i]);
+        for(int i=0;i<nums1.size();i++)
+            if(binary_search(nums2,nums1[i]))
+            dum.push_back(nums1[i]);
 
         res.push_back(dum);
         dum.clear();
 
-        for(int i=0;i<t2.size();i++)
-            if(binary_search(t1,t2[i]))
-            dum.push_back(t2[i]);
+        for(int i=0;i<nums2.size();i++)
+            if(binary_search(nums1,nums2[i]))
+            dum.push_back(nums2[i]);
 
         res.push_back(dum);
         return res;
