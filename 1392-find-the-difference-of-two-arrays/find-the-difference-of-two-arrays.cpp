@@ -31,23 +31,30 @@ public:
             }
             return t1;
     }
+    vector<int> find(vector<int>&a1,vector <int>&a2)
+    {
+        vector<int>res;
+        for(int i=0;i<a1.size();i++)
+            if(binary_search(a2,a1[i]))
+            res.push_back(a1[i]);
+        return res;
+    }
 
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) 
     {
         sort(nums1.begin(),nums1.end());
         sort(nums2.begin(),nums2.end());
+
         nums1=remove_dup(nums1);
         nums2=remove_dup(nums2);
 
         vector<vector<int>> res;
         vector<int>dum;
 
-        for(int i=0;i<nums1.size();i++)
-            if(binary_search(nums2,nums1[i]))
-            dum.push_back(nums1[i]);
+        
 
-        res.push_back(dum);
-        dum.clear();
+        res.push_back(find(nums1,nums2));
+
 
         for(int i=0;i<nums2.size();i++)
             if(binary_search(nums1,nums2[i]))
