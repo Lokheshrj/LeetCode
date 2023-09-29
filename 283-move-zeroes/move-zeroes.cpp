@@ -1,7 +1,7 @@
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        int zc=0,p=0,s=nums.size();
+     short int zc=0,p=0,s=nums.size();
         for(int i=0;i<s;i++)
         {
             if(nums[i]==0)
