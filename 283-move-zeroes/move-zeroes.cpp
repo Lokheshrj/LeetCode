@@ -12,7 +12,7 @@ public:
                 ++p;
             }
         }
-        for(int i=zc;i>0;--i)
+        for(;zc>0;--zc)
         {
             nums[p]=0;
             ++p; 
