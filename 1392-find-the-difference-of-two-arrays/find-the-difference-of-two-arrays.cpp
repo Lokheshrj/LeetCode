@@ -42,13 +42,13 @@ public:
 
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) 
     {
-        sort(nums1.begin(),nums1.end());
+        sort(nums1.begin(),nums1.end());//sort the given arrays
         sort(nums2.begin(),nums2.end());
 
-        nums1=remove_dup(nums1);
+        nums1=remove_dup(nums1);//remove duplicates
         nums2=remove_dup(nums2);
 
-        vector<vector<int>> res;
+        vector<vector<int>> res;//find unique elements from each array
         res.push_back(find(nums1,nums2));
         res.push_back(find(nums2,nums1));
         return res;
