@@ -15,7 +15,7 @@ public:
         }
         return true;
     } 
-    vector<int>* remove_dup(vector<int>&arr)
+    /*vector<int>* remove_dup(vector<int>&arr)
     {
         vector<int>*res;
         if(arr.size()>1)
@@ -27,7 +27,7 @@ public:
             }
         }
         return res;
-    }
+    }*/
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) 
     {
         sort(nums1.begin(),nums1.end());
