@@ -4,8 +4,12 @@ public:
     {
         short int c=0;
         for(int i=0;t[i]!='\0';i++)
-            if(t[i]==s[c])
+        {
+            if(t[i]!=s[c])
+            continue;
+            else
             ++c;
+        }
         if(s.length()==c)
         return true;
         return false;
