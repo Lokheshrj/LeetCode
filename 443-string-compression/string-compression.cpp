@@ -50,42 +50,7 @@ public:
     cout<<x;
     chars=s;
     return s.size();
-    /*++c;
-        if(chars[i]!=chars[i+1]||i==chars.size()-2)
-        {
-                if(c==1&&i!=(chars.size()-2))
-                {
-                    s.push_back(chars[i]);
-                    continue;
-                }
-                if(i==chars.size()-2)//
-                ++c;
-                s.push_back(chars[i]);
-                
-            c=0;
-        }*/
-        /*if(chars[i]==chars[i-1])
-        {
-            ++c;
-        }
-        if(chars[i]!=chars[i-1]||i==chars.size()-1)
-        {
-            if(i!=chars.size()-1)
-            s.push_back(chars[i-1]);
-            else
-            s.push_back(chars[i]);
-            if(c!=1)
-            {
-                if(c>9)
-                {
-                    s.push_back((c/10)+48);
-                    s.push_back((c%10)+48);
-                }
-                else
-                s.push_back(c+48);
-                c=1;
-            }
-        }*/
+
     }
 
 };
