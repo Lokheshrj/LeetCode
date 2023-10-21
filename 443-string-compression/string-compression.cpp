@@ -25,8 +25,11 @@ public:
     int compress(vector<char>& chars) {
     int c=1;
     vector<char>s;
-    /*if(chars.size()==1)
-    s.push_back(chars[0]);*/
+    if(chars.size()==1)
+    {
+        s.push_back(chars[0]);
+        return s.size();
+    }
     char ch=chars[0];
     for(int i=1;i<chars.size();i++)
     {
@@ -46,11 +49,8 @@ public:
     s.push_back(ch); 
     if(c!=1)
     count(s,c);
-    for(char x: s)
-    cout<<x;
     chars=s;
     return s.size();
-
     }
 
 };
