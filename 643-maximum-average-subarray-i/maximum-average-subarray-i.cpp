@@ -4,8 +4,8 @@ public:
     {
         int sum=0;
         double m;
-        int i=0;
-        for(;i<k;i++)
+        int i;
+        for(i=0;i<k;i++)
             sum+=nums[i];
         int j=0;
         m=sum;
