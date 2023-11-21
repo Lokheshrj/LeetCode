@@ -4,7 +4,7 @@ public:
     string st;
     string temp;
     string r;
-    int si,c,t;
+    int si;
     for(int i=0;i<s.length();i++)
     {
         if(s[i]!=']')
@@ -20,7 +20,6 @@ public:
             }
             --si;
             st.pop_back();
-            cout<<st[si];
             while(si>=0 && st[si]>='0'&& st[si]<='9')
             {
                 r.push_back(st[si]);
@@ -35,7 +34,6 @@ public:
                 si+=(r[j]-48);
             }
             r.clear();
-
             reverse(temp.begin(),temp.end());
             while(si--)
             {
@@ -48,17 +46,3 @@ public:
     return st;    
     }
 };
-
-/*c=0;
-            while(st[si]>48&&st[si]<57)
-            {
-                ++c;
-                --si;
-            }
-            t=0;
-            while(c--)
-            {
-                t*=10;
-                t+=st[++si]-48;
-            }
-            cout<<t;*/
