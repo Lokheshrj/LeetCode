@@ -16,7 +16,7 @@ public:
         int n=1;
         if(head->next==NULL)
         return NULL;
-        ListNode *temp=head,*b=head;
+        ListNode *temp=head;
         while(temp->next!=NULL)
         {
             ++n;
@@ -31,6 +31,6 @@ public:
         }
         if(temp->next!=NULL)
         temp->next=temp->next->next;
-        return b;
+        return head;
     }
 };
