@@ -11,7 +11,7 @@ class Solution {
 public:
     int guessNumber(int n) {
         int l=1;
-        unsigned long long h=n;
+        unsigned long long int h=n;
         unsigned long long int m=0;
         int c;
         while(l<=h)
