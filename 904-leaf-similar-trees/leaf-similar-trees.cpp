@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    void order(TreeNode* root,vector<int>& list)
+    void order(TreeNode* root,vector<short int>& list)
     {
         if(!root)
         return;
@@ -21,7 +21,7 @@ public:
         list.push_back(root->val);
     }
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-       vector<int>l1,l2;
+       vector<short int>l1,l2;
        order(root1,l1);
        order(root2,l2);
        return l1==l2?true:false;
