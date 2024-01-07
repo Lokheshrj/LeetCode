@@ -3,7 +3,7 @@ public:
     vector<int> countBits(int n) 
     {
         int s,num;
-        vector<int> result;
+        vector<int> result(n+1);
         for(int i=0;i<=n;i++)
         {
             s=0;
@@ -13,7 +13,7 @@ public:
                 s+=num%2;
                 num/=2;
             }
-            result.push_back(s);
+            result[i]=s;
         }
         return result;
     }
