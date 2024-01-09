@@ -14,9 +14,12 @@ public:
     int numIslands(vector<vector<char>>& grid) 
     {
         int count=0;
-        for(int i=0;i<grid.size();i++)
+        int r,c;
+        r=grid.size();
+        c=grid[0].size();
+        for(int i=0;i<r;i++)
         {
-            for(int j=0;j<grid[0].size();j++)
+            for(int j=0;j<c;j++)
             {
                 if(grid[i][j]=='1')
                 {
