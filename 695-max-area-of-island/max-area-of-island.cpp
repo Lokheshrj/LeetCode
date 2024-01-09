@@ -18,7 +18,7 @@ public:
     int maxAreaOfIsland(vector<vector<int>>& grid) 
     {
         int max=0;
-        int c=0,m;
+        int m;
         int row=grid.size();
         int col=grid[0].size();
         for(int i=0;i<row;i++)
