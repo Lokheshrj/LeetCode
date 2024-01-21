@@ -12,71 +12,51 @@ class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) 
     {
-        if(list1==nullptr)
+        if(!list1)
             return list2;
-        else if(list2==nullptr)
+        else if(!list2)
             return list1;
-        ListNode *temp=NULL,*r=NULL;
-        if(list1 && list2)
+        
+        ListNode *h,*t1,*t2,*temp;
+        if(list1->val<=list2->val)
         {
-        if(list1->val<list2->val)
-        {
-            temp= new ListNode(list1->val);
-            r=temp;
-            list1=list1->next;
+        h=list1;
+        temp=h;
+        list1=list1->next;
         }
         else if(list1->val>list2->val)
         {
-            temp= new ListNode(list2->val);
-            r=temp;
-            list2=list2->next;
+        h=list2;
+        temp=h;
+        list2=list2->next;
         }
-        else
+        while(list1&&list2)
         {
-            temp= new ListNode(list1->val);
-            r=temp;
-            temp->next=new ListNode(list2->val);
-            temp=temp->next;
-            list1=list1->next;
-            list2=list2->next;
-        }
-        }
-        while(list1 && list2)
-        {
-            if(list1->val<list2->val)
+            if(list1->val<=list2->val)
             {
-                temp->next= new ListNode(list1->val);
+                temp->next=list1;
                 temp=temp->next;
                 list1=list1->next;
             }
             else if(list1->val>list2->val)
             {
-                temp->next= new ListNode(list2->val);
+                temp->next=list2;
                 temp=temp->next;
                 list2=list2->next;
             }
-            else
-            {
-                temp->next= new ListNode(list1->val);
-                temp=temp->next;
-                temp->next= new ListNode(list1->val);
-                temp=temp->next;
-                list1=list1->next;
-                list2=list2->next;
-            }
-        }
-        while(list2)
-        {
-            temp->next=new ListNode(list2->val);
-            temp=temp->next;
-            list2=list2->next;
         }
         while(list1)
         {
-            temp->next=new ListNode(list1->val);
+            temp->next=list1;
             temp=temp->next;
             list1=list1->next;
         }
-        return r;
+        while(list2)
+        {
+            temp->next=list2;
+            temp=temp->next;
+            list2=list2->next;
+        }
+        return h;
     }
 };
