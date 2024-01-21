@@ -17,18 +17,16 @@ public:
         else if(!list2)
             return list1;
         
-        ListNode *h,*t1,*t2,*temp;
+        ListNode *h,*temp;
         if(list1->val<=list2->val)
         {
-        h=list1;
-        temp=h;
-        list1=list1->next;
+            h=temp=list1;
+            list1=list1->next;
         }
         else if(list1->val>list2->val)
         {
-        h=list2;
-        temp=h;
-        list2=list2->next;
+            h=temp=list2;
+            list2=list2->next;
         }
         while(list1&&list2)
         {
