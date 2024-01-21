@@ -20,14 +20,15 @@ public:
         ListNode *h,*temp;
         if(list1->val<=list2->val)
         {
-            h=temp=list1;
+            h=list1;
             list1=list1->next;
         }
         else if(list1->val>list2->val)
         {
-            h=temp=list2;
+            h=list2;
             list2=list2->next;
         }
+        temp=h;
         while(list1&&list2)
         {
             if(list1->val<=list2->val)
