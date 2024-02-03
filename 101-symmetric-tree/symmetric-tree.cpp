@@ -21,7 +21,7 @@ public:
         return false;
         bool l= isequal(r1->right,r2->left);
         bool r= isequal(r1->left,r2->right);
-        return l&&r;
+        return l&r;
     }
     bool isSymmetric(TreeNode* root) {
         if(!root)
