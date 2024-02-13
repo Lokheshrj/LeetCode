@@ -4,60 +4,45 @@ public:
     {
         int i=a.length()-1,j=b.length()-1;
         string r="";
-        int c=0;
+        bool c=false;
         while(i>=0&&j>=0)
         {
-            if(a[i]=='0'&&b[j]=='1')
+            if((a[i]=='0'&&b[j]=='1')||(a[i]=='1'&&b[j]=='0'))
             {
                 if(c)
                 {
                     r+='0';
-                    c=1;
+                    c=true;
                 }
                 else
                 {
                     r+="1";
                 }
             }
-            else if(a[i]=='1'&&b[j]=='0')
-            {
-                if(c)
-                {
-                    r+='0';
-                    c=1;
-                }
-                else
-                {
-                    r+="1";
-                }
-            }
-            
-            else if(a[i]=='1'&&b[j]=='1')
+           else if(a[i]=='1'&&b[j]=='1')
             {
                 if(c)
                 {
                     r+='1';
-                    c=1;
                 }
                 else
                 {
                     r+="0";
-                    c=1;
                 }
+                c=true;
             }
             else if(a[i]=='0'&&b[j]=='0')
             {
                 if(c)
                 {
                     r+="1";
-                    c=0;
+                    c=false;
                 }
                 else
                 r+="0";
             }
             --i;--j;
         }
-        cout<<"j"<<j;
         while(i>=0)
         {
             if(a[i]=='0')
@@ -65,7 +50,7 @@ public:
                 if(c)
                 {
                     r+="1";
-                    c=0;
+                    c=false;
                 }
                 else
                 r+='0';
@@ -75,7 +60,7 @@ public:
                 if(c)
                 {
                     r+="0";
-                    c=1;
+                    c=true;
                 }
                 else
                 r+="1";
@@ -89,7 +74,7 @@ public:
                 if(c)
                 {
                     r+="1";
-                    c=0;
+                    c=false;
                 }
                 else
                 r+='0';
@@ -99,7 +84,7 @@ public:
                 if(c)
                 {
                     r+="0";
-                    c=1;
+                    c=true;
                 }
                 else
                 r+="1";
