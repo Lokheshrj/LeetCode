@@ -2,6 +2,7 @@ class Solution {
 public:
     bool isAnagram(string s, string t) 
     {
+        if(s.length()!=t.length()) return false;
         map<char,int>m;
         for(int i=0;s[i]!='\0';i++)
             m[s[i]]++;
