@@ -16,6 +16,8 @@ public:
         {
             for(int j=i+1;j<n;j++)
             {
+                if(nums[i]>0)
+                break;
                 int req=(nums[i]+nums[j])*-1;
                 if(m.count(req)&&m.find(req)->second>j)
                 {
