@@ -14,13 +14,8 @@ public:
     {
         if(r->next)
         r->next=removeele(r->next,n);
-        (*n)=(*n)-1;
-        if(*n==0)
-        {
-            cout<<r->val;
-            return r->next;
-        }
-        return r;
+        --(*n);
+        return (*n==0)?r->next:r;
     }
     ListNode* removeNthFromEnd(ListNode* head, int n) 
     {
