@@ -6,11 +6,10 @@ public:
         int h=tokens.size()-1;
         int s=0;
         int max_s=0;
-        if(h==0)
+        if(tokens.size()-1==0)
         {
-            if(tokens[l]<=power)
-            return 1;
-            return 0;
+            cout<<"Heloo";
+            return tokens[l]<=power?1:0;
         }
         while(l<=h)
         {
