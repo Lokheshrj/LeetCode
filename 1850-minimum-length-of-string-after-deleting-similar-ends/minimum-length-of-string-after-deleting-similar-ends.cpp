@@ -16,7 +16,7 @@ public:
                 --l;
             }
             else
-            return l-f+1; 
+            break;
         }
         return l-f+1;
     }
