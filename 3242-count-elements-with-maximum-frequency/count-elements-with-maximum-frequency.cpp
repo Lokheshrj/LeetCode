@@ -18,11 +18,9 @@ public:
                 }
                 else if(max==c)
                 ++t;
-                
                 c=1;
             }
         }
-        cout<<"t :"<<t<<"max :"<<max;
         return t*max;
     }
 };
