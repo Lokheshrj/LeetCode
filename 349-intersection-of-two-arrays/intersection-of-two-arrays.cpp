@@ -5,13 +5,15 @@ public:
        map<int,int>m;
        for(auto x:nums1)
             m[x]++;
-        set<int>s;
+        vector<int>ans;
         for(auto x:nums2)
-        {
+        { 
             if(m[x])
-                s.insert(x);
+            {
+                ans.push_back(x);
+                m[x]=0;
+            }
         }
-        vector<int>ans(s.begin(),s.end());
         return ans;
     }
 };
