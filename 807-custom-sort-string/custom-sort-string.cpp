@@ -3,7 +3,6 @@ public:
     string customSortString(string order, string s) 
     {
         vector<int>mp(26,0);
-        //map<char,int>mp;
         for(char ch:s)
         ++mp[ch-'a'];
         string samp="";
@@ -20,7 +19,6 @@ public:
             if(mp[i])
             samp+=string(mp[i],i+'a');
         }
-        cout<<samp;
         return samp;
     }
 };
