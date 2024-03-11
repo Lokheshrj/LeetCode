@@ -2,22 +2,23 @@ class Solution {
 public:
     string customSortString(string order, string s) 
     {
-        map<char,int>mp;
+        vector<int>mp(26,0);
+        //map<char,int>mp;
         for(char ch:s)
-        ++mp[ch];
+        ++mp[ch-'a'];
         string samp="";
         for(char ch:order)
         {
-            if(mp[ch])
+            if(mp[ch-'a'])
             {
-                samp+=string(mp[ch],ch);
-                mp[ch]=0;
+                samp+=string(mp[ch-'a'],ch);
+                mp[ch-'a']=0;
             }
         }
-        for(auto x : mp)
+        for(int i=0;i<26;i++)
         {
-            if(x.second)
-            samp+=string(x.second,x.first);
+            if(mp[i])
+            samp+=string(mp[i],i+'a');
         }
         cout<<samp;
         return samp;
