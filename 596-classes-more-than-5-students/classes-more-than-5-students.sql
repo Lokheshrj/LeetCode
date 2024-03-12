@@ -1,4 +1,4 @@
 select 
         class 
 from courses
-group by class having count(*)>4;
+group by class having count(student)>4;
