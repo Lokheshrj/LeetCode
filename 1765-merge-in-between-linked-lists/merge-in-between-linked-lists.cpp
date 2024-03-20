@@ -22,20 +22,15 @@ public:
             end=p->next?p->next:p;
 
         ListNode *prev,*curr=list1;
-        int count=0;
-        while(count<a)
-        {
-            prev=curr;
-            curr=curr->next;
-            ++count;
-        }
-        prev->next=list2;
-        while(count<b)
-        {
-            curr=curr->next;
-            ++count;
-        }
-        end->next=curr->next;
+        ListNode *t;
+
+        for(int i=0;i<a-1;i++)
+        curr=curr->next;
+        t=curr->next;
+        curr->next=list2;
+        for(int i=a;i<b;i++)
+        t=t->next;
+        end->next=t->next;
         return list1;
     }
 };
