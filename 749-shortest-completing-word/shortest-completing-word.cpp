@@ -30,7 +30,6 @@ public:
             }
         }
         return licensePlate;
-        return "";
     }
 
 
