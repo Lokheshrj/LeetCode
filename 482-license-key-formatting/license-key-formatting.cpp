@@ -2,29 +2,27 @@ class Solution {
 public:
     string licenseKeyFormatting(string s, int k) 
     {
-        stack<char>st;
-        for(char ch:s)
-        {
-            if(ch!='-')
-            st.push(toupper(ch));
-        }
-        s="";
+        string ans="";
+        int length=s.length()-1;
         int c=0;
-        while(!st.empty())
+        for(int i=length;i>=0;--i)
         {
-            if(c<k)
+            if(s[i]!='-')
             {
-                s+=st.top();
-                st.pop();
-                ++c;
+                if(c<k)
+                {
+                    ans+=toupper(s[i]);
+                    ++c;
+                }
+                else
+                {
+                    ans+='-';
+                    ans+=toupper(s[i]);
+                    c=1;
+                }
             }
-            else
-            {
-                s+='-';
-                c=0;
-            }
-        }
-        reverse(s.begin(),s.end());
-        return s;
+        } 
+        reverse(ans.begin(),ans.end());
+        return ans;
     }
 };
