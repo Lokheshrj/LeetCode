@@ -3,9 +3,8 @@ public:
     string licenseKeyFormatting(string s, int k) 
     {
         string ans="";
-        int length=s.length()-1;
         int c=0;
-        for(int i=length;i>=0;--i)
+        for(int i=s.length()-1;i>=0;--i)
         {
             if(s[i]!='-')
             {
