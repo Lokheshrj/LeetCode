@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-    bool isPalindrome(ListNode* head)
+    bool isPalindrome(ListNode* head) 
     {
         vector<int>t;
         while(head)
@@ -18,14 +18,13 @@ public:
             t.push_back(head->val);
             head=head->next;
         }
+        int s=t.size()-1;
         int l=0;
-        int r=t.size()-1;
-        while(l<r)
+        while(l<=s/2)
         {
-            if(t[l]!=t[r])
+            if(t[l]!=t[s-l])
             return false;
             ++l;
-            --r;
         }
         return true;
     }
