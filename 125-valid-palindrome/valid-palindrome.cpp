@@ -11,7 +11,6 @@ public:
                 t+=tolower(ch);
             }
         }
-        cout<<t;
         int h=t.length()-1;
         if(h==-1)
         return true;
