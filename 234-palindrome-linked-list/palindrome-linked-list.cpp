@@ -19,12 +19,10 @@ public:
             head=head->next;
         }
         int s=t.size()-1;
-        int l=0;
-        while(l<=s/2)
+        for(int i=0;i<=s/2;i++)
         {
-            if(t[l]!=t[s-l])
+            if(t[i]!=t[s-i])
             return false;
-            ++l;
         }
         return true;
     }
