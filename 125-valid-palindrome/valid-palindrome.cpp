@@ -1,7 +1,8 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-
+        if(s.length()==1)
+        return true;
         string t="";
         for(char ch:s)
         {
