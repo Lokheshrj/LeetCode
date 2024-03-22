@@ -5,7 +5,7 @@ public:
         string t="";
         for(char ch:s)
         {
-            if(isalpha(ch)||ch>='0'&&ch<='9')
+            if(isalpha(ch)||isdigit(ch))
             {
                 t+=tolower(ch);
             }
