@@ -3,13 +3,15 @@ public:
     vector<int> findDuplicates(vector<int>& nums) 
     {
         vector<int>res;
-        sort(nums.begin(),nums.end());
         int n=nums.size();
-        for(int i=0;i<n-1;i++)
-            if(nums[i]==nums[i+1])
-            {
-                res.push_back(nums[i]);
-            }
+        for(int i=0;i<n;i++)
+        {
+            int x=abs(nums[i]);
+            if(nums[x-1]<0)
+                res.push_back(x);
+            else
+            nums[x-1]*=-1;
+        }
         return res;
     }
 };
