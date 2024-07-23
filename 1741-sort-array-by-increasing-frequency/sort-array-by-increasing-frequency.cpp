@@ -6,7 +6,8 @@ public:
             return true;
         else if(A.second==B.second)
         {
-            if(A.first>B.first)     return true;
+            if(A.first>B.first)     
+            return true;
         }
         return false;
     }
@@ -18,18 +19,13 @@ public:
         for(auto &it:freq)
             arr.push_back(it);
         sort(arr.begin(),arr.end(),comparator);
-        
-        for(auto x:arr)
-            cout<<x.first<<" "<<x.second<<"\n";
         int c=0;
         for(auto x:arr)
+            cout<<x.first<<" "<<x.second<<"\n";
+        for(auto x:arr)
         {
-            for(int i=0;i<x.second;i++)
-            {
-                nums[c]=x.first;
-                ++c;
-            }
-                
+            fill(nums.begin()+c,nums.begin()+x.second+c,x.first);
+            c+=x.second;    
         }
         return nums;
     }
