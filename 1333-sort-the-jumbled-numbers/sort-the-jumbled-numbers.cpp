@@ -2,10 +2,10 @@ class Solution {
 public:
     int converter(vector<int>&m,int n)
     {
+        if(n<10)
+            return m[n];
         stack<int>temp;
         int mv=0;
-        if(n==0)
-            temp.push(n);
         while(n>0)
         {
             temp.push(n%10);
@@ -33,9 +33,7 @@ public:
             nums[i]=t;  
         }
         sort(nums.begin(),nums.end());
-       /* cout<<"Result \n:";
-        for(auto n:nums)
-            cout<<n<<" ";*/
+
         vector<int>ans;
         for(auto i:nums)
         {
