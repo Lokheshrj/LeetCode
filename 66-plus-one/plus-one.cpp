@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) 
     {
-        int i=digits.size()-1;
+        short int i=digits.size()-1;
         for(;i>=0;--i)
         {
             if(digits[i]==9)
