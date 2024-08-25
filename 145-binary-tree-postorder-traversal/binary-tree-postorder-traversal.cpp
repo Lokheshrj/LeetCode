@@ -11,16 +11,20 @@
  */
 class Solution {
 public:
-    vector<int>res;
-    void traversal(TreeNode*r)
+    void Traversal(TreeNode *r,vector<int>&res)
     {
-        if(!r) return;
-        traversal(r->left);
-        traversal(r->right);
+        if(!r)
+            return;
+        Traversal(r->left,res);
+        Traversal(r->right,res);
         res.push_back(r->val);
     }
-    vector<int> postorderTraversal(TreeNode* root) {
-        traversal(root);
+    vector<int> postorderTraversal(TreeNode* root) 
+    {
+        if(!root)
+            return {};
+        vector<int>res;
+        Traversal(root,res);
         return res;
     }
 };
