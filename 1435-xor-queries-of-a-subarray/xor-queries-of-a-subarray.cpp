@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void Prefix_Xor(vector<int>& a, vector<int>& arr,short int *n) 
+    void Prefix_Xor(vector<int>& a, vector<int>& arr, int *n) 
     {
         a[0] = arr[0];
         for (int i = 1; i < *n; ++i)
@@ -8,7 +8,7 @@ public:
     }
     vector<int> xorQueries(vector<int>& arr, vector<vector<int>>& queries) 
     {
-        short int n = arr.size();
+         int n = arr.size();
         vector<int> r(n);
         Prefix_Xor(r, arr, &n);
         vector<int> result;
