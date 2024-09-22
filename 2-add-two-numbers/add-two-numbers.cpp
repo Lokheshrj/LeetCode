@@ -34,32 +34,20 @@ public:
                 t=t->next;
             }
         }
-        ListNode *rem=l1?l1:l2;
-        while(rem)
+        l1=l1?l1:l2;
+        while(l1)
         {
             if(b)
             {
-                t->next=new ListNode(((rem->val+b)%10));
-                b=rem->val+b>9?true:false;
+                t->next=new ListNode(((l1->val+b)%10));
+                b=l1->val+b>9?true:false;
             }
             else
-                t->next=rem;
-            rem=rem->next;
+                t->next=l1;
+            l1=l1->next;
             t=t->next;
         }
-        /*while(l2)
-        {
-            if(b)
-            {
-                t->next=new ListNode(((l2->val+b)%10));
-                b=l2->val+b>9?true:false;
-            }
-            else
-                t->next=l2;
-            l2=l2->next;
-            t=t->next;
-        }*/
-
+        
         if(b)
             t->next=new ListNode(1);
 
