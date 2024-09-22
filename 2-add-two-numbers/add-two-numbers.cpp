@@ -30,24 +30,24 @@ public:
             if(l1&&l2)
             {
                 l1=l1->next;
-            l2=l2->next;
-            t=t->next;
+                l2=l2->next;
+                t=t->next;
             }
         }
-        while(l1)
+        ListNode *rem=l1?l1:l2;
+        while(rem)
         {
-            cout<<"running \n "<<l1->val;
             if(b)
             {
-                t->next=new ListNode(((l1->val+b)%10));
-                b=l1->val+b>9?true:false;
+                t->next=new ListNode(((rem->val+b)%10));
+                b=rem->val+b>9?true:false;
             }
             else
-                t->next=l1;
-            l1=l1->next;
+                t->next=rem;
+            rem=rem->next;
             t=t->next;
         }
-        while(l2)
+        /*while(l2)
         {
             if(b)
             {
@@ -58,7 +58,7 @@ public:
                 t->next=l2;
             l2=l2->next;
             t=t->next;
-        }
+        }*/
 
         if(b)
             t->next=new ListNode(1);
