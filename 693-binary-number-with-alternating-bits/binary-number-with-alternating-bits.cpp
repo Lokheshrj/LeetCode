@@ -1,34 +1,15 @@
 class Solution {
 public:
-    bool hasAlternatingBits(int num) {
-        int c=0;
-        if(num%2==0)
+    bool hasAlternatingBits(int num) 
+    {
+        while(num)
         {
-            while(num)
-            {
-                if(num&1)
-                    --c;
-                else
-                    ++c;
-                num>>=1;
-                if(c>1||c<0)
-                    return false;
-            }
+            int l=num&1;
+            int sl=(num>>1)&1;
+            if ((l^sl)==0) return false;
+            num>>=1;
         }
-        else
-        {
-            while(num)
-            {
-                if(num&1)
-                    ++c;
-                else
-                    --c;
-                num>>=1;
-                if(c>1||c<0)
-                    return false;
-            }
-        } 
         return true;
-        }
+    }
     
 };
