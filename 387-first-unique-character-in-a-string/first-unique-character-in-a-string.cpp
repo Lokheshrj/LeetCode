@@ -2,21 +2,16 @@ class Solution {
 public:
     int firstUniqChar(string s) 
     {
-        vector<int>list(26,-1);
+        vector<int>list(26,0);
         for(int i=0;s[i]!='\0';i++)
         {
-            if(list[s[i]-'a']==-1)
-                list[s[i]-'a']=i;
-            else
-                list[s[i]-'a']=-2;
+            ++list[s[i]-'a'];
         }
-        int min=s.length();
-        for(int x:list)
-            if(x>-1)
-            {
-                if(x<min)
-                    min=x;
-            }
-        return min==s.length()?-1:min;
+        for(int i=0;s[i]!='\0';i++)
+        {
+            if(list[s[i]-'a']==1)
+                return i;
+        }
+        return -1;
     }
 };
