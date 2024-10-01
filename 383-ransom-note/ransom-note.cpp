@@ -5,17 +5,14 @@ public:
         
         map<char,int>mp;
         int c=0;
-        for(char ch:ransomNote)
-            ++mp[ch];
-            
         for(char ch:magazine)
+            ++mp[ch];
+
+        for(char ch:ransomNote)
         {
             if(mp[ch]>0)
                 --mp[ch];
-        }
-        for(auto a:mp)
-        {
-            if(a.second>0)
+            else
                 return false;
         }
         return true;
