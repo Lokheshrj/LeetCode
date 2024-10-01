@@ -6,9 +6,8 @@ public:
         map<char,int>mp;
         int c=0;
         for(char ch:ransomNote)
-        {
             ++mp[ch];
-        }
+            
         for(char ch:magazine)
         {
             if(mp[ch]>0)
