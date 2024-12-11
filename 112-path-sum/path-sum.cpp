@@ -17,21 +17,15 @@ public:
         return false;
         int curr=prev+root->val;
         bool l,r;
-        if(root->left)
-            l=tree_traverse(root->left,target,curr);
-        if(root->right)
-            r=tree_traverse(root->right,target,curr);
+        l=tree_traverse(root->left,target,curr);
+        r=tree_traverse(root->right,target,curr);
         if(!root->left && !root->right && curr==target)
             return true;
         else 
             return r|l;
     }
     bool hasPathSum(TreeNode* root, int targetSum) 
-    {
-        bool l,r;
-        // if(!root)
-        //     return false;    
+    {   
         return tree_traverse(root,targetSum,0);   
-        return l|r;
     }
 };
