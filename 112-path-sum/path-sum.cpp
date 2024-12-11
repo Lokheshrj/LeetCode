@@ -23,8 +23,6 @@ public:
             r=tree_traverse(root->right,target,curr);
         if(!root->left && !root->right && curr==target)
             return true;
-        // else if(curr>target)
-        //     return false;
         else 
             return r|l;
     }
@@ -36,11 +34,7 @@ public:
 
         if((!root->left && !root->right) && (root->val==targetSum))
             return true;    
-        else
-        {
-            l=tree_traverse(root->left,targetSum,root->val);
-            r=tree_traverse(root->right,targetSum,root->val);
-        }
+        return tree_traverse(root,targetSum,0);   
         return l|r;
     }
 };
