@@ -14,9 +14,8 @@ public:
     bool tree_traverse(TreeNode* root, int target,int prev)
     {
         if(!root)
-        return false;
+            return false;
         int curr=prev+root->val;
-        bool l,r;
         if(!root->left && !root->right && curr==target)
             return true;
         else 
