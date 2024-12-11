@@ -29,11 +29,8 @@ public:
     bool hasPathSum(TreeNode* root, int targetSum) 
     {
         bool l,r;
-        if(!root)
-            return false;
-
-        if((!root->left && !root->right) && (root->val==targetSum))
-            return true;    
+        // if(!root)
+        //     return false;    
         return tree_traverse(root,targetSum,0);   
         return l|r;
     }
