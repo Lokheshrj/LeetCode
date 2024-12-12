@@ -10,13 +10,12 @@ public:
             q.push(x);
             s+=x;
         }
-        while(k)
+        while(k--)
         {
             x=q.top();
-            s-=x-sqrt(x);
+            s-=(x-sqrt(x));
             q.pop();
             q.push(sqrt(x));
-            --k;
         }
         return s;
     }
