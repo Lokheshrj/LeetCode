@@ -1,16 +1,16 @@
 class Solution {
 public:
-    long long pickGifts(vector<int>& gifts, int k) {
-        long long s=0;
-    int n=gifts.size();
-    while(k)
+    long long pickGifts(vector<int>& gifts, int k) 
     {
-        sort(gifts.begin(),gifts.end());
-            gifts[n-1]=floor(sqrt(gifts[n-1]));
-        --k;  
-    }
-    for(int x:gifts)
-        s+=x;
-    return s;
-    }
-};
+        long long s=0;
+        while(k)
+        {
+            make_heap(gifts.begin(),gifts.end());
+            gifts[0]=floor(sqrt(gifts[0]));
+            --k;  
+        }
+        for(int x:gifts)
+            s+=x;
+        return s;
+        }
+    };
