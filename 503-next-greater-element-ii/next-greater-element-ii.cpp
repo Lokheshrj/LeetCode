@@ -30,16 +30,6 @@ public:
             traversal(s,nums,i,ans);
             i--;
         }
-        // for(auto x:mp)
-        // {
-        //     cout<<x.first<<x.second<<"\n";
-        // }
-        for(int x: ans)
-        {
-            cout<<x;
-        }
-        
-            
         return ans;
     }
 };
