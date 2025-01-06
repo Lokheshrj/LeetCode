@@ -19,15 +19,13 @@ public:
     vector<int> twoSum(vector<int>& nums, int target) 
     {
         int n=nums.size()-1;
-        int val;
-        for(int i=0;i<=n;i++)
+        int val,i=0;
+        for(i;i<=n;i++)
         {
-
             val=search(nums,i+1,n,target-nums[i]);
             if(val!=-1)
-                return {i+1,val+1};
-            
+                break;
         }
-        return{-1,-1};
+        return{i+1,val+1};
     }
 };
