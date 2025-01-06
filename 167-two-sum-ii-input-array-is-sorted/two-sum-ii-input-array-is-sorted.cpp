@@ -1,7 +1,8 @@
 class Solution {
 public:
-    int search(vector<int>&arr,int low,int high,int target)
+    int search(vector<int>&arr,int low,int target)
     {
+        int high=arr.size()-1;
         int mid;
         while(low<=high)
         {
@@ -22,7 +23,7 @@ public:
         int val,i=0;
         for(i;i<=n;i++)
         {
-            val=search(nums,i+1,n,target-nums[i]);
+            val=search(nums,i+1,target-nums[i]);
             if(val!=-1)
                 break;
         }
