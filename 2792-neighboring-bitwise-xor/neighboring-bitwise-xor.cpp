@@ -4,23 +4,22 @@ public:
     {
         int n=derived.size();
         vector<int>ans(n,0);
-        bool is_alternative=false;
-        if(derived[0]==1)
-            is_alternative=true;
-        else
-            is_alternative=false;
-        if(is_alternative)
-        {
-            ans[0]=0;  
-        }
+        int t2,t1=0,first=0;
         for(int i=0;i<n-1;i++)
         {
             if(derived[i]==1)
-            ans[i+1]= !ans[i];
+            {
+
+                t2=!t1;
+                t1=t2;
+            }
             else
-            ans[i+1]=ans[i];
+            {
+                t2=t1;
+                t1=t2;
+            }
         }
-        if(derived[n-1]==ans[0]^ans[n-1])
+        if(derived[n-1]==first^t1)
             return true;
         return false;
     }
