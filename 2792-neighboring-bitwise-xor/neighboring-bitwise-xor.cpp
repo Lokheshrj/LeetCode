@@ -3,7 +3,7 @@ public:
     bool doesValidArrayExist(vector<int>& derived) 
     {
         int n=derived.size();
-        int t2,t1=0;
+        bool t2,t1=false;
         for(int i=0;i<n-1;i++)
         {
             if(derived[i]==1)
