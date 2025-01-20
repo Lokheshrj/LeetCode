@@ -16,15 +16,26 @@ public:
         }
         for(int i=0;i<row*column;i++)
         {
-            // vector<int>& values=mp[arr[i]];
-            int ro=mp[arr[i]][0];
-            int co=mp[arr[i]][1];
-            ++r[ro];++c[co];
-            if(r[ro]==column||c[co]==row)
+            vector<int>& values=mp[arr[i]];
+            for(int j=0;j<2;j++)
+            {
+                if(j==0)
                 {
-                    return i;
+                    ++r[values[j]];
+                    if(r[values[j]]==column)
+                        return i;
+                    
                 }
+                else
+                {
+                    ++c[values[j]];
+                    if (c[values[j]]==row)
+                    {
+                        return i;
+                    }
+                }
+            }
         }
-        return -1;
+        return 0;
     }
 };
