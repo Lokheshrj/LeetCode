@@ -18,8 +18,8 @@ public:
     }
     bool V_B_S(vector<vector<int>>& matrix, int target)
     {
-        int col=matrix.size()-1;
-        int l=0,h=col,mid;
+        int l=0,h=matrix.size()-1;
+        int mid;
         int greatest_least=-1;
         while(l<=h)
         {
@@ -30,12 +30,8 @@ public:
                 greatest_least=mid;
             }
             else
-            {
-                
                 h=mid-1;
-            }
         }
-        cout<<"Goes Well"<<greatest_least;
         return greatest_least==-1?false:H_B_S(matrix[greatest_least],target);
     }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
