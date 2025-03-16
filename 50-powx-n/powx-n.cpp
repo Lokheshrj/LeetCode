@@ -1,13 +1,13 @@
 class Solution {
 public:
     double myPow(double x, int n) {
-        double ans=1;
         if(x==0||x==1)
             return x;
+        double ans=1;
         if(n<0)
         {
             x=1/x;
-            n=-(n+1);
+            n=-(n+1);//to avoid overflow
             ans*=x;
         }
         while(n>0)
