@@ -9,7 +9,7 @@ public:
         int working=0;
         for(int i=1;i<meetings.size();i++)
         {
-            if(meetings[i][0]<=end+1)
+            if(meetings[i][0]<=end)
             {
                 end=max(end,meetings[i][1]);
             }
