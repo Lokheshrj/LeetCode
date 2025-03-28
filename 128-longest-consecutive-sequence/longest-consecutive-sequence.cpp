@@ -4,18 +4,14 @@ public:
     {
         if(nums.size()==0)
             return 0;
-        int longest=INT_MIN;
         sort(nums.begin(),nums.end());
-        for(int n:nums)
-            cout<<n;
-        cout<<"\n";
+        int n=nums.size();
+        int longest=INT_MIN;
         int count=0;
-        for(int i=1;i<nums.size();i++)
+        for(int i=1;i<n;i++)
         {
             if(nums[i-1]+1==nums[i])
-            {
                 ++count;
-            } 
             else if(nums[i-1]<nums[i])
             {
                 if(longest<count)
